@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        
+        function calculateTotalMortgage(percent, contribution, amount, countMonths) {
+            let monthlyInterestRate = percent / 100 / 12;
+            let loanBalance = amount - contribution;
+            let monthlyPayment = loanBalance * (monthlyInterestRate + monthlyInterestRate / (Math.pow(1 + monthlyInterestRate, countMonths) - 1));
+            let totalPayment = monthlyPayment * countMonths;
+            return totalPayment.toFixed(2);
+        }
+
+        console.log(calculateTotalMortgage(10, 0, 50000, 12));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        function solveEquation(a, b, c) {
+            let results = [];
+            let discriminant;
+            let calculateDiscriminant = (b ** 2) - 4 * a * c;
+            if (calculateDiscriminant < 0) {
+                return results;
+            } else if (calculateDiscriminant === 0) {
+                discriminant = -b / (2 * a);
+                results.push(discriminant);
+                return results;
+            } else if (calculateDiscriminant > 0) {
+                discriminant = (-b + Math.sqrt(calculateDiscriminant)) / (2 * a);
+                results.push(discriminant);
+                discriminant = (-b - Math.sqrt(calculateDiscriminant)) / (2 * a);
+                results.push(discriminant);
+                return results;
+            }
+        }
+        console.log(solveEquation(3, -4, 2));
+        console.log(solveEquation(1, -6, 9));
+        console.log(solveEquation(1, -4, -5));
+
+    </script>
+
+</body>
+
+</html>
